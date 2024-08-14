@@ -29,24 +29,27 @@
         <br>
         <script type = "text/javascript">
 
+            //「配列コンストラクタ」=「new」を使ってArray()の引数へ格納したい文字列を設定する
+            //「配列リテラル」=[ ]を使ってそのまま文字列を設定する
             //initialvalue=最初の実引数として渡される値
             //previousValue=前回のreturnの値、第一引数（callbackfunction）の一つ、第二引数（initialvalue）が指定されているかされていないかで内容が変わる。指定されてる⇨initialvalue/指定されてない⇨配列の0番目の値
             //currentValue=現在の配列の値、第一引数（callbackfunction）の一つ、第二引数（initialvalue）が指定されているかされていないかで内容が変わる。指定されてる⇨元の配列の要素/指定されてない⇨配列の1番目の値
+            //concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる（対象の配列.concat(結合する配列);）
 
             //修正していいところ
             //関数名のtoOneDimensionに、入力に相当する引数の値として配列の0番目の値と配列の1番目の値の要素を入力している。
             function toOneDimension(previousValue, currentValue) {
 
-        	    //concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる（対象の配列.concat(結合する配列);）
-        	    //return currentValue.concat(previousValue); //←これが正解！
+                //①console.log(previousValue.concat(currentValue));
 
                 //修正していいところ
                 //引数に入っている元の配列の要素と元の配列の2番目の要素を結合して関数に渡している。
         	    return previousValue.concat(currentValue);
+                //③return currentValue.concat(previousValue);
             }
 
-            //「①配列コンストラクタ」=「new」を使ってArray()の引数へ格納したい文字列を設定する
-            //「②配列リテラル」=[ ]を使ってそのまま文字列を設定する
+            var test1 = "処理を止める、1回目";
+            alert (test1);
 
             //修正だめ
             //var sampleArrayAで変数宣言をし、同時に複数の配列を代入している。
@@ -60,15 +63,19 @@
 
             //修正していいところ
             //var sampleArrayBで変数宣言をし、同時にsampleArrayAに代入している配列の値とconcatで結合しているtoOneDimentionをreduceを使って、配列の要素を先頭から順に処理し、累積値・単一の値をsampleArrayBに代入している。
-            //concatで[A1,A2,A3,B1,B2,B3,C1,C2,C3]になって、reduceでA1 A2 A3 B1 B2 B3 C1 C2 C3
+            //concatで[A1,A2,A3,B1,B2,B3,C1,C2,C3]になって、reduceで0:"A1" 1:"A2" 2:"A3" 3:"B1" 4:"B2" 5:"B3" 6:"C1" 7:"C2" 8:"C3"
             var sampleArrayB = sampleArrayA.reduce(toOneDimension);
+            //②console.log(sampleArrayB);
+            
+            var test2 = "処理を止める、2回目";
+            alert (test2);
 
             //for (初期化式; 条件式; 変化式)
             //length=文字列の長さ（数）や配列に格納されている要素を表示する
 
             //修正だめ
-            //指定された回数分だけ繰り返し処理を行う。初期値の設定で変数名counterVarに0を代入し、counterVarがsampleArrayB.length（要素の数8）よりも小さい場合はtrueになるため、document.writeを実行する。
-            //2回目の処理に入る。counterVarに代入している0が1に変わり、counterVarがsampleArrayB.length（要素の数8）よりも小さい場合はtrueになるため、document.writeを実行する。
+            //指定された回数分だけ繰り返し処理を行う。初期値の設定で変数名counterVarに0を代入し、counterVarがsampleArrayB.length（要素の数9）よりも小さい場合はtrueになるため、document.writeを実行する。
+            //2回目の処理に入る。counterVarに代入している0が1に変わり、counterVarがsampleArrayB.length（要素の数9）よりも小さい場合はtrueになるため、document.writeを実行する。
             for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++) {
 
         	    //②下記が実行される
