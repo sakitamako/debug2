@@ -40,15 +40,18 @@
             //関数名のtoOneDimensionに、引数の値としてpreviousValue（配列の0番目）とcurrentValue（配列の1番目）を入力している。
             function toOneDimension(previousValue, currentValue) {
 
-                //①console.log(previousValue.concat(currentValue));
+                //③間に入力してみた、console.log(previousValue.concat(currentValue));
 
                 //修正していいところ
                 //引数に入っている対象の値（配列の0番目）previousValueにcurrentValue（配列の1番目）を結合してreturnで関数に渡している。
         	    return previousValue.concat(currentValue);
 
+                 //①returnの下に入力してみたけどエラー、console.log(return previousValue.concat(currentValue));
+                 //②少し変えて入力してみたけどエラー、console.log(previousValue.concat(currentValue));
+
                 //要求を満たすための修正
                 //引数に入っている対象の配列の1番目に配列の0番目を結合して関数に渡している。
-                //③return currentValue.concat(previousValue);
+                //⑤return currentValue.concat(previousValue);
             }
 
             var test1 = "処理を止める、1回目";
@@ -69,7 +72,7 @@
             //concatで['A1','A2','A3','B1','B2','B3','C1','C2','C3']２次元配列から１次元配列になって、reduceで0:"A1" 1:"A2" 2:"A3" 3:"B1" 4:"B2" 5:"B3" 6:"C1" 7:"C2" 8:"C3"単一の値になった
             var sampleArrayB = sampleArrayA.reduce(toOneDimension);
             
-            //②console.log(sampleArrayB);
+            //④console.log(sampleArrayB);
             
             var test2 = "処理を止める、2回目";
             alert (test2);
@@ -81,9 +84,6 @@
             //指定された回数分だけ繰り返し処理を行う。初期値の設定で変数名counterVarに0を代入し、counterVarがsampleArrayBに入っている文字列の数9よりも小さい場合はtrueになるため、document.writeを実行する。
             //2回目の処理に入る。counterVarに代入している0が1に変わり、counterVarがsampleArrayBに入っている文字列の数9よりも小さい場合はtrueになるため、document.writeを実行する。
             for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++) {
-
-        	    //②下記が実行される
-        	    //③変化式 counterVar++ が実行されて変数 counterVar の値が 1 となり、for文の2周目の処理に入る
 
                 //修正だめ
                 //sampleArrayBの文字列を表示し、counterVarで初期値の値（0,1,2,3,4,5,6,7,8）を表示する、１回目の処理では初期値に0を代入してるから0になる！
