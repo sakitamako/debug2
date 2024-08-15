@@ -41,6 +41,7 @@
             function toOneDimension(previousValue, currentValue) {
 
                 //③間に入力してみた、console.log(previousValue.concat(currentValue));
+                //⑥console.log(currentValue.concat(previousValue));
 
                 //修正していいところ
                 //引数に入っている対象の値（配列の0番目）previousValueにcurrentValue（配列の1番目）を結合してreturnで関数に渡している。
@@ -73,6 +74,7 @@
             var sampleArrayB = sampleArrayA.reduce(toOneDimension);
             
             //④console.log(sampleArrayB);
+            //⑦console.log(sampleArrayB);
             
             var test2 = "処理を止める、2回目";
             alert (test2);
