@@ -37,14 +37,14 @@
             //concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる（対象の配列.concat(結合する配列);）
 
             //修正していいところ
-            //関数名のtoOneDimensionに、引数の値として前回のreturnの値という意味を持つpreviousValue（配列の0番目）と現在の配列の値という意味を持つcurrentValue（配列の1番目）を入力している。
+            //関数名のtoOneDimensionに引数の値として、「前回のreturnの値」という意味を持つpreviousValue（配列の0番目）と、「現在の配列の値」という意味を持つcurrentValue（配列の1番目）を入力している。
             function toOneDimension(previousValue, currentValue) {
 
                 //③間に入力してみた、console.log(previousValue.concat(currentValue));
                 //⑥console.log(currentValue.concat(previousValue));
 
                 //修正していいところ
-                //引数に入っている対象の値（配列の0番目）previousValueにcurrentValue（配列の1番目）を結合してreturnで関数に渡している。
+                //引数に入っている対象の値（配列の0番目）previousValueにcurrentValue（配列の1番目）を結合してreturnで関数に返している・渡している。
         	    return previousValue.concat(currentValue);
 
                  //①returnの下に入力してみたけどエラー、console.log(return previousValue.concat(currentValue));
@@ -88,9 +88,9 @@
             for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++) {
 
                 //修正だめ
-                //sampleArrayBの文字列を表示し、counterVarで初期値の値（0,1,2,3,4,5,6,7,8）を表示する、１回目の処理では初期値に0を代入してるから0になる！
+                //sampleArrayBの文字列を表示し、counterVarで初期値の値、今回は１回目の処理で初期値に0を代入してるから0になる。
                 document.write('sampleArrayB['+ counterVar +']:');
-                //sampleArrayBの値をcounterVarで0から順番に表示している（0の時はA1、1の時はA2、2の時はA3）、1回目の処理では初期値に0を代入しているからA1になる！
+                //sampleArrayBの値をcounterVarで0から順番に表示している（0の時はA1、1の時はA2、2の時はA3）、1回目の処理では初期値に0を代入しているからA1になる。
                 document.write(sampleArrayB[counterVar]);
                 //改行している
                 document.write('<br/>');
