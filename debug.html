@@ -43,7 +43,16 @@
                 //③間に入力してみた、console.log(previousValue.concat(currentValue));
                 //⑥console.log(currentValue.concat(previousValue));
 
+                //小川講師から教えていただいたところ
+                //どのような処理がされているか確認したいときは引数をまずデバッグしてみる！
+                //一つずつ出力してどのような動作になるか確認する
+                alert(previousValue);
+                console.log(currentValue);
+                console.log(previousValue.concat(currentValue));
+
                 //修正していいところ
+                //concatで['A1','A2','A3','B1','B2','B3','C1','C2','C3']１次元配列になった
+                //returnされる前に何が起こっているのか⇨多次元配列を結合している１回目でAB、2回目でABC、１次元配列になったものをreturnしている！それが下記！！！
                 //引数に入っている対象の値（配列の0番目）previousValueにcurrentValue（配列の1番目）を結合してreturnで関数に返している・渡している。
         	    return previousValue.concat(currentValue);
 
@@ -55,6 +64,7 @@
                 //⑤return currentValue.concat(previousValue);
             }
 
+            //このアラートは意味ない！同じ間違いしないように残しておく
             var test1 = "処理を止める、1回目";
             alert (test1);
 
@@ -65,17 +75,21 @@
                 ['B1', 'B2', 'B3'],
                 ['C1', 'C2', 'C3']];
 
+                console.log(sampleArrayA);
+
             //reduce=隣り合う2つの配列要素に対して左から右へ同時に関数を適用し、単一の値にすることができるメソッド。配列の中身を一つずつ足して合計の値を求めることができるメソッド、第一引数（callbackunction）の一つ
             //2次元配列、配列の配列※配列の中に配列が入っていること
 
             //修正していいところ
-            //concatで['A1','A2','A3','B1','B2','B3','C1','C2','C3']１次元配列になって、reduceで0:"A1" 1:"A2" 2:"A3" 3:"B1" 4:"B2" 5:"B3" 6:"C1" 7:"C2" 8:"C3"単一の値になった
-            //var sampleArrayBで変数宣言をし、sampleArrayAに代入している配列をtoOneDimentionで結合し、reduceで配列の要素を先頭から順に処理して単一になった値をsampleArrayBに代入している。
+            //reduceで0:"A1" 1:"A2" 2:"A3" 3:"B1" 4:"B2" 5:"B3" 6:"C1" 7:"C2" 8:"C3"単一の値になった
+            //var sampleArrayBで変数宣言をし、reduceに引数の値としてtoOneDimensionを入力している、配列の要素を先頭から順に処理して単一になった値をsampleArrayBに代入している。
             var sampleArrayB = sampleArrayA.reduce(toOneDimension);
+            console.log(sampleArrayB);
             
             //④console.log(sampleArrayB);
             //⑦console.log(sampleArrayB);
             
+            //このアラートは意味ない！同じ間違いしないように残しておく
             var test2 = "処理を止める、2回目";
             alert (test2);
 
