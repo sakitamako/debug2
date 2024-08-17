@@ -32,7 +32,7 @@
             //「配列コンストラクタ」=「new」を使ってArray()の引数へ格納したい文字列を設定する
             //「配列リテラル」=[ ]を使ってそのまま文字列を設定する
             //initialvalue=最初の実引数として渡される値
-            //previousValue=前回のreturnの値、第一引数（callbackfunction）の一つ、第二引数（initialvalue）が指定されているかされていないかで内容が変わる。指定されてる⇨initialvalue/指定されてない⇨配列の0番目の値
+            //previousValue=前回のreturnの値（1回目の処理で実行された値のこと）、第一引数（callbackfunction）の一つ、第二引数（initialvalue）が指定されているかされていないかで内容が変わる。指定されてる⇨initialvalue/指定されてない⇨配列の0番目の値
             //currentValue=現在の配列の値、第一引数（callbackfunction）の一つ、第二引数（initialvalue）が指定されているかされていないかで内容が変わる。指定されてる⇨元の配列の要素/指定されてない⇨配列の1番目の値
             //concatメソッドは2以上の配列を結合して新しい配列を作るときに使う、文字列を結合することもできる（対象の配列.concat(結合する配列);）
 
@@ -47,8 +47,8 @@
                 //引数に入っている対象の値（配列の0番目）previousValueにcurrentValue（配列の1番目）を結合してreturnで関数に返している・渡している。
         	    return previousValue.concat(currentValue);
 
-                 //①returnの下に入力してみたけどエラー、console.log(return previousValue.concat(currentValue));
-                 //②少し変えて入力してみたけどエラー、console.log(previousValue.concat(currentValue));
+                //①returnの下に入力してみたけどエラー、console.log(return previousValue.concat(currentValue));
+                //②少し変えて入力してみたけどエラー、console.log(previousValue.concat(currentValue));
 
                 //要求を満たすための修正、要求はCBAの順番で表示したい
                 //引数に入っている対象の配列の1番目に配列の0番目を結合して関数に渡している。
@@ -69,8 +69,8 @@
             //2次元配列、配列の配列※配列の中に配列が入っていること
 
             //修正していいところ
-            //var sampleArrayBで変数宣言をし、sampleArrayAに代入している配列をtoOneDimentionで結合し、reduceで配列の要素を先頭から順に処理して単一になった値をsampleArrayBに代入している。
             //concatで['A1','A2','A3','B1','B2','B3','C1','C2','C3']１次元配列になって、reduceで0:"A1" 1:"A2" 2:"A3" 3:"B1" 4:"B2" 5:"B3" 6:"C1" 7:"C2" 8:"C3"単一の値になった
+            //var sampleArrayBで変数宣言をし、sampleArrayAに代入している配列をtoOneDimentionで結合し、reduceで配列の要素を先頭から順に処理して単一になった値をsampleArrayBに代入している。
             var sampleArrayB = sampleArrayA.reduce(toOneDimension);
             
             //④console.log(sampleArrayB);
@@ -88,9 +88,9 @@
             for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++) {
 
                 //修正だめ
-                //sampleArrayBの文字列を表示し、counterVarで初期値の値、今回は１回目の処理で初期値に0を代入してるから0になる。
+                //sampleArrayBの文字列を表示し、counterVarで初期値の値、今回は１回目の処理で初期値に0を代入してるので0を表示している。
                 document.write('sampleArrayB['+ counterVar +']:');
-                //sampleArrayBの値をcounterVarで0から順番に表示している（0の時はA1、1の時はA2、2の時はA3）、1回目の処理では初期値に0を代入しているからA1になる。
+                //sampleArrayBの値をcounterVarで0から順番に表示している（0の時はA1、1の時はA2、2の時はA3）、今回は1回目の処理で初期値に0を代入しているのでA1が表示される。
                 document.write(sampleArrayB[counterVar]);
                 //改行している
                 document.write('<br/>');
